@@ -1,8 +1,10 @@
 import 'package:fittrack_pro/core/assets/assets.dart';
+import 'package:fittrack_pro/core/route/router.dart';
 import 'package:fittrack_pro/core/theme/color.dart';
 import 'package:fittrack_pro/core/theme/spacing.dart';
 import 'package:fittrack_pro/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Root extends StatefulWidget {
   const Root({super.key});
@@ -56,7 +58,7 @@ class _RootState extends State<Root> {
                     ),
                     SizedBox(height: s),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => context.go(RoutePath.dashboard),
                       child: Text("Get Started"),
                     ),
                     SizedBox(height: xl4),
