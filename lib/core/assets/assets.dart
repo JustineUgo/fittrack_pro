@@ -9,6 +9,8 @@ class Assets {
   static const String sample4 = "assets/images/sample4.png";
   static const String sample5 = "assets/images/sample5.png";
   static const String sample6 = "assets/images/sample6.png";
+
+  static const String heart = "assets/images/heart.png";
   
 
   //ICONS

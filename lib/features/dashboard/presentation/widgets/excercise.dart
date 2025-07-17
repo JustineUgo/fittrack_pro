@@ -30,9 +30,9 @@ class Excercise extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Expanded(child: Hero(
-              tag: image,
-              child: Image.asset(image)),),
+            Expanded(
+              child: Hero(tag: image, child: Image.asset(image)),
+            ),
             ContentPart(),
           ],
         ),

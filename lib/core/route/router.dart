@@ -28,7 +28,13 @@ final GoRouter router = GoRouter(
         return WorkoutScreen(tag: tag??'');
       },
     ),
-    
+    GoRoute(
+      path: RoutePath.workout,
+      builder: (BuildContext context, GoRouterState state) {
+        final String? tag = state.extra as String?;
+        return WorkoutScreen(tag: tag??'');
+      },
+    ),
   ],
 );
 

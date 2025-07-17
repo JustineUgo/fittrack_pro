@@ -4,6 +4,7 @@ import 'package:fittrack_pro/core/theme/spacing.dart';
 import 'package:fittrack_pro/core/theme/style.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/excercise.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/stat_card.dart';
+import 'package:fittrack_pro/features/dashboard/presentation/widgets/workout_progress.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -77,49 +78,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 SliverToBoxAdapter(child: SizedBox(height: m)),
                 SliverToBoxAdapter(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: xl),
-                    padding: EdgeInsets.all(xl),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(FitRadius.s),
-                      color: FitColor.primary(context),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Workout\nProgress",
-                              style: FitStyle.h6(context).copyWith(
-                                color: FitColor.whiteColor,
-                                height: 1.1,
-                              ),
-                            ),
-                            Text(
-                              "14 Excercise Left",
-                              style: FitStyle.b3(
-                                context,
-                              ).copyWith(color: FitColor.whiteColor),
-                            ),
-                          ],
-                        ),
-                        CircularProgressIndicator(
-                          strokeWidth: 6,
-                          value: .4,
-                          backgroundColor: FitColor.primary(context).shade200,
-                          color: FitColor.yellow,
-                          constraints: BoxConstraints(
-                            minWidth: 90,
-                            minHeight: 90,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: WorkoutProgress(),
                 ),
 
                 SliverAppBar(
