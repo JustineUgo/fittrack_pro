@@ -1,7 +1,9 @@
+import 'package:fittrack_pro/core/route/router.dart';
 import 'package:fittrack_pro/core/theme/color.dart';
 import 'package:fittrack_pro/core/theme/spacing.dart';
 import 'package:fittrack_pro/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Excercise extends StatelessWidget {
   const Excercise({super.key, required this.image, this.swap = false});
@@ -9,26 +11,31 @@ class Excercise extends StatelessWidget {
   final bool swap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 180,
-      margin: EdgeInsets.only(bottom: xs),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(FitRadius.m),
-        // color: FitColor.whiteColor,
-        gradient: LinearGradient(
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft,
-          colors: [
-            FitColor.primary(context).shade200,
-            FitColor.background(context),
+    return GestureDetector(
+      onTap: () => context.push(RoutePath.workout, extra: image),
+      child: Container(
+        height: 180,
+        margin: EdgeInsets.only(bottom: xs),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(FitRadius.m),
+          // color: FitColor.whiteColor,
+          gradient: LinearGradient(
+            begin: Alignment.centerRight,
+            end: Alignment.centerLeft,
+            colors: [
+              FitColor.primary(context).shade200,
+              FitColor.background(context),
+            ],
+          ),
+        ),
+        child: Row(
+          children: [
+            Expanded(child: Hero(
+              tag: image,
+              child: Image.asset(image)),),
+            ContentPart(),
           ],
         ),
-      ),
-      child: Row(
-        children: [
-          Expanded(child: Image.asset(image)),
-          ContentPart(),
-        ],
       ),
     );
   }
