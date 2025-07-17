@@ -1,3 +1,4 @@
+import 'package:fittrack_pro/core/route/router.dart';
 import 'package:fittrack_pro/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -12,29 +13,14 @@ class FitTrackPro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'FitTrack Pro',
       debugShowCheckedModeBanner: false,
-            themeMode: ThemeMode.light,
-            theme: FitTheme.themeData,
-            darkTheme: FitTheme.darkThemeData,
-            
+      themeMode: ThemeMode.light,
+      theme: FitTheme.themeData,
+      darkTheme: FitTheme.darkThemeData,
 
-      home: Scaffold(
-        appBar: AppBar(title: Text('Flutter Demo Home Page')),
-        body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(
-                value: .3,
-                color: Colors.black,
-                trackGap: 10,
-              ),
-            ],
-          ),
-        ),
-      ),
+      routerConfig: router,
     );
   }
 }
