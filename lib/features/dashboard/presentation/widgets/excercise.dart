@@ -12,18 +12,23 @@ class Excercise extends StatelessWidget {
     return Container(
       height: 180,
       margin: EdgeInsets.only(bottom: xs),
-
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(FitRadius.m),
-        color: FitColor.lightPurple,
-        image: DecorationImage(image: AssetImage(image)),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          color: FitColor.primary(context).withValues(alpha: .7),
-          borderRadius: BorderRadius.circular(FitRadius.m),
+        // color: FitColor.whiteColor,
+        gradient: LinearGradient(
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+          colors: [
+            FitColor.primary(context).shade200,
+            FitColor.background(context),
+          ],
         ),
-        child: Row(children: [ContentPart()]),
+      ),
+      child: Row(
+        children: [
+          Expanded(child: Image.asset(image)),
+          ContentPart(),
+        ],
       ),
     );
   }
@@ -54,12 +59,13 @@ class ContentPart extends StatelessWidget {
         padding: EdgeInsets.all(s),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               "Squat Low\nBuild Strength",
+              textAlign: TextAlign.end,
               style: FitStyle.h6(context).copyWith(
-                color: FitColor.whiteColor,
+                // color: FitColor.whiteColor,
                 fontWeight: FontWeight.w400,
                 height: 1.3,
               ),
@@ -67,7 +73,7 @@ class ContentPart extends StatelessWidget {
             Text(
               "Build core strength ",
               style: FitStyle.b2(context).copyWith(
-                color: FitColor.whiteColor,
+                // color: FitColor.whiteColor,
                 fontWeight: FontWeight.w300,
                 height: 1.3,
               ),

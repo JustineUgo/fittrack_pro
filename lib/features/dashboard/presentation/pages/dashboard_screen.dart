@@ -4,7 +4,6 @@ import 'package:fittrack_pro/core/theme/spacing.dart';
 import 'package:fittrack_pro/core/theme/style.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/excercise.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/stat_card.dart';
-import 'package:fittrack_pro/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -32,15 +31,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetImage(Assets.rootImage),
-                              fit: BoxFit.cover,
+                        Hero(
+                          tag: 'intro',
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage(Assets.rootImage),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -91,14 +93,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Workout Progress",
-                              style: FitStyle.h7(
-                                context,
-                              ).copyWith(color: FitColor.whiteColor),
+                              "Workout\nProgress",
+                              style: FitStyle.h6(context).copyWith(
+                                color: FitColor.whiteColor,
+                                height: 1.1,
+                              ),
                             ),
                             Text(
                               "14 Excercise Left",
-                              style: FitStyle.b4(
+                              style: FitStyle.b3(
                                 context,
                               ).copyWith(color: FitColor.whiteColor),
                             ),
@@ -107,8 +110,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         CircularProgressIndicator(
                           strokeWidth: 6,
                           value: .4,
-                          backgroundColor: FitColor.neutral(context).shade400,
-                          color: FitColor.primary(context).shade800,
+                          backgroundColor: FitColor.primary(context).shade200,
+                          color: FitColor.yellow,
                           constraints: BoxConstraints(
                             minWidth: 90,
                             minHeight: 90,
@@ -186,7 +189,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ).copyWith(fontWeight: FontWeight.w300),
                           ),
                           SizedBox(height: xs),
-
                           Excercise(image: Assets.sample),
                           Excercise(image: Assets.sample6, swap: true),
                           Excercise(image: Assets.sample1),

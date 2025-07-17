@@ -19,7 +19,6 @@ class FitTrackPro extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: FitTheme.themeData,
       darkTheme: FitTheme.darkThemeData,
-
       routerConfig: router,
     );
   }
