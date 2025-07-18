@@ -30,9 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   backgroundColor: FitColor.greyBackground(context),
                   flexibleSpace: DashboardHeader(),
                 ),
-                SliverToBoxAdapter(child: SizedBox(height: m)),
                 SliverToBoxAdapter(child: WorkoutProgress()),
-
                 SliverAppBar(
                   pinned: orientation == Orientation.portrait,
                   expandedHeight: 350,
