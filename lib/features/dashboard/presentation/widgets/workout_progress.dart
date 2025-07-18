@@ -91,7 +91,7 @@ class _WorkoutChartState extends State<WorkoutChart>
                       animation.value,
                       selectedIndex,
                     ),
-                    size: Size(MediaQuery.of(context).size.width - 80, 100),
+                    size: Size(constraints.maxWidth - 20, 100),
                   ),
                 ],
               );
