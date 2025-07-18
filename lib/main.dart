@@ -1,25 +1,48 @@
 import 'package:fittrack_pro/core/route/router.dart';
+import 'package:fittrack_pro/core/services/storage_service.dart';
 import 'package:fittrack_pro/core/theme/theme.dart';
+import 'package:fittrack_pro/features/dashboard/presentation/bloc/theme_mode/theme_mode_bloc.dart';
+import 'package:fittrack_pro/features/dashboard/presentation/bloc/theme_mode/theme_mode_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+Future<void> main() async{
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   widgetsBinding;
-  runApp(const FitTrackPro());
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  runApp(  FitTrackPro(sharedPreferences: sharedPreferences));
 }
 
 class FitTrackPro extends StatelessWidget {
-  const FitTrackPro({super.key});
-
+  const FitTrackPro({super.key, required this.sharedPreferences});
+  final SharedPreferences sharedPreferences;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'FitTrack Pro',
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: FitTheme.themeData,
-      darkTheme: FitTheme.darkThemeData,
-      routerConfig: router,
+    return MultiBlocProvider(
+      providers: [
+    
+        BlocProvider(
+          create: (_) => ThemeModeBloc(
+            storage: SharedPreferenceService(sharedPreferences,)
+          ),
+        ),
+      ],
+      child: BlocBuilder<ThemeModeBloc, ThemeModeState>(
+      builder: (context, state) {
+          return MaterialApp.router(
+            title: 'FitTrack Pro',
+            debugShowCheckedModeBanner: false,
+            themeMode: state is SystemMode
+                ? ThemeMode.system
+                : (state is LightMode ? ThemeMode.light : ThemeMode.dark),
+            
+            theme: FitTheme.themeData,
+            darkTheme: FitTheme.darkThemeData,
+            routerConfig: router,
+          );
+        }
+      ),
     );
   }
 }
