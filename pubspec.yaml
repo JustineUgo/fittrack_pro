@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^16.0.0
+  video_player: ^2.10.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -24,6 +25,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/videos/
     - assets/images/
     - assets/fonts/
     - assets/svgs/

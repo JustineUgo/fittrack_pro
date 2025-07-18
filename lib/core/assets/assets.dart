@@ -11,7 +11,10 @@ class Assets {
   static const String sample6 = "assets/images/sample6.png";
 
   static const String heart = "assets/images/heart.png";
-  
+
+
+  //VIDEOS
+  static const String workoutVideo = "assets/videos/workout.mp4";  
 
   //ICONS
   
