@@ -1,9 +1,39 @@
+import 'package:fittrack_pro/core/assets/assets.dart';
 import 'package:fittrack_pro/core/route/router.dart';
 import 'package:fittrack_pro/core/theme/color.dart';
 import 'package:fittrack_pro/core/theme/spacing.dart';
 import 'package:fittrack_pro/core/theme/style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+class Excercises extends StatelessWidget {
+  const Excercises({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Excercises",
+                            style: FitStyle.h6(
+                              context,
+                            ).copyWith(fontWeight: FontWeight.w300),
+                          ),
+                          SizedBox(height: xs),
+                          Excercise(image: Assets.sample),
+                          Excercise(image: Assets.sample6, swap: true),
+                          Excercise(image: Assets.sample1),
+                          Excercise(image: Assets.sample4, swap: true),
+                          Excercise(image: Assets.sample2),
+                          Excercise(image: Assets.sample3, swap: true),
+                          Excercise(image: Assets.sample5),
+                        ],
+                      ),
+                    );
+  }
+}
 
 class Excercise extends StatelessWidget {
   const Excercise({super.key, required this.image, this.swap = false});
