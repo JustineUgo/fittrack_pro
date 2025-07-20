@@ -4,6 +4,7 @@ import 'package:fittrack_pro/features/dashboard/presentation/widgets/animated_fa
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/dashboard_header.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/excercises.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/health_overview.dart';
+import 'package:fittrack_pro/features/dashboard/presentation/widgets/staggered_card.dart';
 import 'package:fittrack_pro/features/dashboard/presentation/widgets/workout_progress.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   backgroundColor: FitColor.greyBackground(context),
                   flexibleSpace: DashboardHeader(),
                 ),
-                SliverToBoxAdapter(child: WorkoutProgress()),
+                SliverToBoxAdapter(
+                  child: StaggeredCard(
+                    delay: 200,
+                    child: WorkoutProgress(),
+                  ),
+                ),
                 SliverAppBar(
                   pinned: orientation == Orientation.portrait,
                   expandedHeight: 350,
@@ -41,7 +47,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: xl),
-                    child: Excercises(),
+                    child: StaggeredCard(
+                      delay: 600,
+                      child: Excercises(),
+                    ),
                   ),
                 ),
               ],
