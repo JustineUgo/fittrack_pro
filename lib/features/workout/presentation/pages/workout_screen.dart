@@ -374,7 +374,7 @@ class SegmentedProgressPainter extends CustomPainter {
     for (int i = 0; i < segments.length; i++) {
       final sweep = (segments[i].inSeconds / totalSeconds) * 2 * pi;
       final paint = Paint()
-        ..color = segmentColors[i % segmentColors.length].withOpacity(0.3)
+        ..color = segmentColors[i % segmentColors.length].withValues(alpha: 0.3)
         ..strokeWidth = strokeWidth
         ..style = PaintingStyle.stroke;
       canvas.drawArc(
