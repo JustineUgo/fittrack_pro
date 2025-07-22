@@ -61,9 +61,11 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     workoutBloc = context.read<WorkoutBloc>();
     context.read<WorkoutBloc>().stream.listen((state) {
       if (state is WorkoutInProgress) {
-        setState(() {
+        if(mounted) {
+          setState(() {
           workoutData = state.data;
         });
+        }
       }
     });
   }
