@@ -14,7 +14,6 @@ A 2-screen fitness tracking app built with Flutter, featuring advanced UI animat
 - [Setup & Running](#setup--running)  
 - [Testing](#testing)  
 - [Known Issues & Trade-offs](#known-issues--trade-offs)  
-- [Contact](#contact)
 
 ---
 
