@@ -1,5 +1,5 @@
 
-````markdown
+
 # FitTrack Pro
 
 A 2-screen fitness tracking app built with Flutter, featuring advanced UI animations, native Android/iOS integrations, and robust state management.
@@ -77,7 +77,7 @@ FitTrack Pro is a modern fitness tracker app demonstrating:
    ```bash
    git clone https://github.com/JustineUgo/fittrack_pro.git
    cd fittrack_pro
-````
+   ```
 
 2. Fetch dependencies:
 
