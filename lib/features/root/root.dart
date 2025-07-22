@@ -60,7 +60,9 @@ class _RootState extends State<Root> {
                       ),
                       SizedBox(height: s),
                       ElevatedButton(
-                        onPressed: () => context.go(RoutePath.dashboard),
+                        onPressed: () {
+                          context.go(RoutePath.dashboard);
+                        },
                         child: Text("Get Started"),
                       ),
                       SizedBox(height: xl4),
