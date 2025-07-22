@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fittrack_pro/core/services/storage_service.dart';
-import 'mocks/mock_shared_preferences.dart';
+import '../../mocks/mock_shared_preferences.dart';
 
 void main() {
   late MockSharedPreferences mockPrefs;
