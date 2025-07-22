@@ -30,7 +30,7 @@ FitTrack Pro is a modern fitness tracker app demonstrating:
 
 ---
 
-## ✨ Features
+## Features
 
 ### UI
 
@@ -62,7 +62,7 @@ FitTrack Pro is a modern fitness tracker app demonstrating:
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 lib/
