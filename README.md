@@ -1,6 +1,6 @@
 
 
-# FitTrack Pro
+# FitTrack Pro 🏃‍♀️📱
 
 A 2-screen fitness tracking app built with Flutter, featuring advanced UI animations, native Android/iOS integrations, and robust state management.
 
@@ -29,7 +29,7 @@ FitTrack Pro is a modern fitness tracker app demonstrating:
 
 ---
 
-## Features
+## ✨ Features
 
 ### UI
 
@@ -58,6 +58,34 @@ FitTrack Pro is a modern fitness tracker app demonstrating:
 - Feature-based folder structure for modularity (`features/dashboard`, `features/workout`)  
 - Dependency injection for decoupling and easier testing  
 - Custom UI components implemented using Flutter's `CustomPainter` and animation framework  
+
+---
+
+## 🗂 Project Structure
+
+```
+lib/
+├── core/
+│   ├── constants/          # App constants (colors, sizes, etc.)
+│   ├── error/              # Error models and handling
+│   └── utils/              # Utilities (formatters, helpers)
+├── features/
+│   ├── dashboard/
+│   │   ├── data/           # Repositories, models, datasources
+│   │   ├── domain/         # Entities and abstract contracts
+│   │   └── presentation/   # UI logic and widgets
+│   │       ├── cubit/      # Cubits for state management
+│   │       ├── pages/      # Dashboard screen
+│   │       └── widgets/    # Custom dashboard widgets
+│   └── workout/
+│       ├── data/           # Simulated workout data sources
+│       ├── domain/         # Workout logic interfaces/entities
+│       └── presentation/
+│           ├── bloc/       # Workout Bloc
+│           ├── pages/      # Workout screen
+│           └── widgets/    # Workout-related widgets
+├── main.dart               # App entry point and routing
+```
 
 ---
 
@@ -119,4 +147,3 @@ flutter test
 * Local notifications dont contain custom controls to meet deadline
 
 ---
-
